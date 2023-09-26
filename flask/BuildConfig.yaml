@@ -1,0 +1,43 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: flask
+spec:
+  flaskSelector: {}
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'flask-uat:latest'
+  resources:
+    limits:
+      cpu: "100m"
+      memory: "256Mi"
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+  successfulBuildsHistoryLimit: 5
+  failedBuildsHistoryLimit: 5
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: openshift
+        name: 'python:3.8'
+  postCommit: {}
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/laurobmb/flask'
+      ref: openshift
+  triggers:
+    - type: GitHub
+      github:
+        secret: HYKOATUuqjsaLOleglYe
+    - type: Generic
+      generic:
+        secret: zpWYk7Ch3R53qVY0485S
+    - type: ConfigChange
+    - type: ImageChange
+      imageChange: {}
+  runPolicy: Serial

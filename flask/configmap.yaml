@@ -1,0 +1,43 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ocp
+data:
+  configmap.html: |+
+    <!DOCTYPE html>
+    <html>
+    <title>Redhat Openshift</title>
+    <body>
+    <h1>OpenShift Container Platform v4.13</h1>
+    <p>Red Hat® OpenShift® Container Platform is a consistent hybrid cloud foundation for building and scaling containerized applications. Red Hat OpenShift is trusted by thousands of customers in every industry to deliver business-critical applications, whether they’re migrating existing workloads to the cloud or building new experiences for customers. It’s also backed by one of the leading Kubernetes contributors, Red Hat.</p>
+    </body>
+    </html>
+  index.html: |+
+    <!DOCTYPE html>
+    <html>
+            <head>
+                <style>
+                    img { width: auto; }
+                </style>
+            </head>
+        <body>
+            <img src="static/openshift.jpg" alt="openshift" width="400" height="200">
+    
+        <!-- The Band Section -->
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+            <h2 class="w3-wide">Openshift v4.10</h2>
+            <p class="w3-opacity"><i>What is Red Hat OpenShift?</i></p>
+            <p class="w3-justify">Red Hat OpenShift is a leading enterprise Kubernetes platform1 that enables a cloud-like experience everywhere it's deployed. Whether it’s in the cloud, on-premise or at the edge, Red Hat OpenShift gives you the ability to choose where you build, deploy, and run applications through a consistent experience. Red Hat OpenShift’s full-stack automated operations and self-service provisioning for developers lets teams work together more efficiently to move ideas from development to production.
+            </p>
+        </div>
+    
+        <iframe width="700" height="450"
+            src="https://www.youtube.com/embed/xEofcsd6HGg">
+        </iframe>
+    
+    
+        </body>
+    </html>
+    
+    
